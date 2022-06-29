@@ -27,9 +27,18 @@ h2 {
   justify-content: space-between;
   border-bottom: solid 1px #d3d3d3;
 }
+
 .para {
   display: flex;
+  gap: 5px;
 }
+
+.remove {
+  border: solid 2px #000;
+  box-shadow: 4px 2px #000;
+  margin-right: 10px;
+}
+
 .book-form {
   display: flex;
   flex-direction: column;
