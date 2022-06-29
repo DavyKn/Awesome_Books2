@@ -14,15 +14,22 @@ h2 {
   border: solid 2px #000;
   margin: 0 10px 20px 10px;
 }
+.hr {
+  width: 20%;
+  border-bottom: #000 3px solid;
+}
 
 .book {
   display: flex;
   padding: 5px;
   gap: 10px;
   align-items: center;
-  border: solid 1px #d3d3d3;
+  justify-content: space-between;
+  border-bottom: solid 1px #d3d3d3;
 }
-
+.para {
+  display: flex;
+}
 .book-form {
   display: flex;
   flex-direction: column;

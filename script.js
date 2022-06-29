@@ -37,17 +37,19 @@ class Book {
     const bookDiv = document.createElement('div');
     bookDiv.setAttribute('data-id', id);
     bookDiv.classList.add('book');
-    const bookTitle = document.createElement('h2');
+    const paragraphDiv = document.createElement('div');
+    const bookTitle = document.createElement('p');
     const bookAuthor = document.createElement('p');
+    paragraphDiv.append(bookTitle, bookAuthor);
+    paragraphDiv.classList.add('para');
     const AremoveBtn = document.createElement('button');
     AremoveBtn.classList.add('remove');
-    const Ahr = document.createElement('hr');
 
-    bookTitle.innerText = `${title}`;
-    bookAuthor.innerText = `${author}`;
+    bookTitle.innerText = `"${title}" by`;
+    bookAuthor.innerText = ` ${author}`;
     AremoveBtn.innerText = 'Remove';
 
-    bookDiv.append(bookTitle, bookAuthor, AremoveBtn, Ahr);
+    bookDiv.append(paragraphDiv, AremoveBtn);
     bookContainer.appendChild(bookDiv);
 
     AremoveBtn.addEventListener('click', (e) => {
