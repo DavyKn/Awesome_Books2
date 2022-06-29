@@ -1,7 +1,7 @@
 
 const bookForm = document.querySelector('.book-form');
-const title = document.querySelector('#title').value;
-const author = document.querySelector('#author').value;
+const title = document.querySelector('#title');
+const author = document.querySelector('#author');
 const bookContainer = document.querySelector('.book-container');
 const addBtn = document.querySelector('.add-btn')
 
@@ -17,17 +17,19 @@ class Book {
     constructor(title, author) {
         this.title = title;
         this.author = author;
+        this.id = uniqueId();
+
     }
 
-    static addBook = (title, author) => {
-        const id = uniqueId();
-        books.push({
-            title,
-            author,
-            id,
-        });
+    static addBook = (book) => {
+        const x = {
+            title: book.title,
+            author: book.author,
+            id: book.id
+        }
+        books.push(x);
         localStorage.setItem('books', JSON.stringify(books));
-        return { title, author, id };
+        return x;
     };
 
     static createBook = ({
@@ -58,16 +60,10 @@ class Book {
         });
     };
 
-    // books.forEach(createBook);
 }
-
+books.forEach(Book.createBook)
 bookForm.onsubmit = (e) => {
     e.preventDefault();
-
-    const newBook = addBook(
-        new Book(title, author)
-    );
-    createBook(newBook);
-    title = ''
-    author = ''
+    const newBook = Book.addBook(new Book(bookForm.title.value, bookForm.author.value))
+    Book.createBook(newBook);
 };
