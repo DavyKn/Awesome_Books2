@@ -4,19 +4,29 @@ const title = document.querySelector('#title').value;
 const author = document.querySelector('#author').value;
 const bookContainer = document.querySelector('.book-container');
 
+const books = JSON.parse(localStorage.getItem('books')) || [];
 class Book {
     constructor(title, author) {
         this.title = title;
         this.author = author;
     }
 
+    static displayLocalStorage = () => {
+      return
+      JSON.parse(localStorage.getItem('books'));
+    } 
 
-    const books = JSON.parse(localStorage.getItem('books')) || [];
+    static localStorage = () => {
+      return this.displayLocalStorage();
+    }
+
+
     static uniqueIdGen = () => {
         let id = Date.now();
         // eslint-disable-next-line no-return-assign
         return () => id += 1;
     };
+
     static uniqueId = uniqueIdGen();
     static addBook = (title, author) => {
         const id = uniqueId();
@@ -57,10 +67,8 @@ class Book {
         });
     };
 
-books.forEach(createBook);
 
-
-
+// books.forEach(createBook);
 }
 
 bookForm.onsubmit = (e) => {
