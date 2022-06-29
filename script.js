@@ -37,6 +37,7 @@ class Book {
     }) => {
         const bookDiv = document.createElement('div');
         bookDiv.setAttribute('data-id', id);
+        bookDiv.classList.add('book');
         const bookTitle = document.createElement('h2');
         const bookAuthor = document.createElement('p');
         const AremoveBtn = document.createElement('button');
