@@ -10,7 +10,7 @@ a {
 }
 
 a:active {
-  color: #0000ff;
+  color: #00f;
 }
 
 h2,
@@ -107,11 +107,13 @@ nav li > * {
   border: solid 3px #000;
   box-shadow: 4px 2px #000;
 }
+
 #contact {
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .copyright {
   border: solid 2px #000;
   margin: 20px 10px;
