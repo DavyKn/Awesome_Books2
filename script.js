@@ -78,7 +78,7 @@ const contact = document.getElementById('contact');
 
 const date = new Date();
 const time = date.toUTCString();
-// eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars ,no-multi-assign
 const dateItem = document.querySelector('.date').innerHTML = time;
 
 listLink.addEventListener('click', () => {

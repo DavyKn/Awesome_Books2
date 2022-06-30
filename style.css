@@ -6,8 +6,13 @@ body {
 a {
   text-decoration: none;
   color: #000;
-  padding-left: 10px;
+  padding: 10px;
 }
+
+a:active {
+  color: #0000ff;
+}
+
 
 h2,
 h3 {
@@ -33,10 +38,17 @@ nav {
   justify-content: space-between;
 }
 
+nav li > * {
+  border-right: solid 2px #000;
+}
+
+.contact-link {
+  border-right: none;
+}
+
 .date {
   align-self: flex-end;
   margin-right: 10px;
-
   padding-bottom: 20px;
 }
 
